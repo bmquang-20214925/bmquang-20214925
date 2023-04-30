@@ -18,6 +18,7 @@ public class Aims {
 		anOrder.addDigitalVideoDisc(dvd5);
 
 		anOrder.removeDigitalVideoDisc(dvd3);
+		System.out.println(anOrder.qtyOrdered);
 		for (int i = 0; i < anOrder.qtyOrdered; i++) {
 			System.out.println(anOrder.itemOrdered[i].getTitle());
 		}

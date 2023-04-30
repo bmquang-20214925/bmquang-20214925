@@ -23,8 +23,22 @@ public class Cart {
 	}
 
 	public void addDigitalVideoDisc(DigitalVideoDisc dvd) {
-		itemOrdered[qtyOrdered] = dvd;
-		qtyOrdered ++;
+		if(qtyOrdered == MAX_NUMBERS_ORDERED)
+		{
+			System.out.println("The cart is almost full");
+			return;
+		}
+		else if (qtyOrdered < MAX_NUMBERS_ORDERED)
+		{
+			
+			itemOrdered[qtyOrdered] = dvd;
+			System.out.println("The disc has been added");
+			qtyOrdered ++;
+			return;
+			
+		}
+		
+
 	}
 	public void removeDigitalVideoDisc(DigitalVideoDisc disc) {
 		int id= 0;
