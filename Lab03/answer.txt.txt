@@ -1,0 +1,14 @@
+Q:Try to add a method addDigitalVideoDisc which allows to pass an arbitrary number of
+arguments for dvd. Compare to an array parameter. What do you prefer in this case?
+A: This new addDigitalVideoDisc seems more robust than the last one
+
+Q: Is Java pass-by-value of pass-by-reference ?
+A:Java is always pass by value.
+
+Q:After the call of swap(jungleDVD, cinderellaDVD) why does the title of these twoobjects still remain?
+A: As Java is pass-by-value, o1, o2 are two references to our original objects, even if the two references get swapped, our dvd1 and dvd2 are not affected
+
+Q:After the call of changeTitle(jungleDVD, cinderellaDVD.getTitle()) why isthe title of the JungleDVD changed?
+Because of the line "dvd.setTitle(title);" Note that when jungle is passed to method, "dvd" reference is created and it refer to our "jungleDVD". Since it refers to our "JungleDVD", it can be used to make changes to our original "Jungle DVD"
+"JungleDVD" does not get its old title back because "dvd = new DigitalVideoDisc(oldtitleString);" this code create a new DVD object and now the "dvd" reference is set to this object, not our original "JungleDVD" anymore.
+
