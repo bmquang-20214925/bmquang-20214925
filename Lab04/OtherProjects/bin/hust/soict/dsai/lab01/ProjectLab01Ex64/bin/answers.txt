@@ -1,0 +1,322 @@
+code for 2.2.5:
+import java.util.Scanner;
+class ex225 {
+    public static void main(String[] args) {
+
+        Scanner sc = new Scanner(System.in);
+        double a = sc.nextDouble();
+        double b = sc.nextDouble();
+        System.out.println(a + b);
+        System.out.println(a - b);
+        System.out.println(a * b);
+        System.out.println(a / b);
+        
+    }
+}
+
+
+code for 2.2.6:
+import java.util.Scanner;
+class ex226 {
+    public static void main(String[] args) {
+
+        Scanner sc = new Scanner(System.in);
+        double a11 = sc.nextDouble();
+        double a12 = sc.nextDouble();
+        double b1 = sc.nextDouble();
+        double a21 = sc.nextDouble();
+        double a22 = sc.nextDouble();
+        double b2 = sc.nextDouble();
+        double d = a11*a22 - a12*a21;
+        double d1 = b1*a22 - a12*b2;
+        double d2 = a11*b2 - a21*b1;
+        System.out.println("Value of x1: "+ (d1/d));
+        System.out.println("Value of x2: " + (d2/d));
+        
+    }
+}
+code for 6.1:
+
+import javax.swing.JOptionPane;
+public class ex61 {
+
+	public static void main(String[] args) {
+		int option =  JOptionPane.showConfirmDialog(null, "Do you want to change?");
+		JOptionPane.showMessageDialog(null, "You've chosen: " + (option == JOptionPane.YES_OPTION?"YES":"NO"));
+		
+		System.exit(0);
+	}
+
+}
+
+code for 6.2:
+
+import java.util.Scanner;
+
+
+public class ex62 {
+
+	public static void main(String[] args) {
+		Scanner sc = new Scanner(System.in);
+		System.out.println("What is your name ?");
+		String name = sc.nextLine();
+		System.out.println("How old are you ?");
+		int age = sc.nextInt();
+		System.out.println("What is your height ?");
+		double height = sc.nextDouble();
+		
+		System.out.println("Hello " + name + ". You are " + age + " years old" + ".Your height is " + height);
+	}
+
+}
+
+
+
+code for 6.3:
+package project_lab01_ex63;
+import java.util.Scanner;
+public class main {
+	public static void main(String[] args) {
+		Scanner sc = new Scanner(System.in);
+		System.out.println("Enter the height of triangle: ");
+		int n = sc.nextInt();
+		System.out.println(n);
+		for (int i = 0; i < n; i++) {
+			for (int j = 0; j < n-i; j ++) {
+				System.out.print(" ");
+			}
+			for (int j =0; j < 2*i + 1; j++) {
+				System.out.print("*");
+			}
+			System.out.println();
+		}
+	}
+}
+
+
+code for 6.4:
+import java.util.Scanner;
+public class Main {
+
+	public static void main(String[] args) {
+
+		boolean check = false;
+		boolean check1 = false;
+		boolean check2 = false;
+		int day = 0;
+		Scanner sc = new Scanner(System.in);
+		do {
+				
+		System.out.println("Please enter the month:");
+		String month = sc.nextLine();
+		System.out.println("PLease enter the year with all digits (year 99 will not be counted as 1999 but 99):");
+		
+		int year = sc.nextInt();
+		sc.nextLine();
+		System.out.println(month + " " + year);
+		switch(month) {
+		case "1":
+		case "Jan":
+		case "Jan.":
+		case "January":
+			day = 31;
+			check = true;
+			break;
+		case "2":
+		case "Feb":
+		case "Feb.":
+		case "February":
+			if ((year % 4 == 0) && (year % 100 != 0 || year %400 == 0)){
+				day = 29;
+				check = true;
+				break;
+			} else {
+				day = 28;
+				check = true;
+				break;
+			}
+		case "3":
+		case "Mar":
+		case "Mar.":
+		case "March":
+			day = 31;
+			check = true;
+			break;
+		case "4":
+		case "Apr":
+		case "Apr.":
+		case "April":
+			day = 30;
+			check = true;
+			break;
+		case "5":
+		case "May":
+			day = 31;
+			check = true;
+			break;
+		case "6":
+		case "Jun":
+		case "June":
+			day = 30;
+			check = true;
+			break;
+		case "7":
+		case "Jul":
+		case "July":
+			day = 31;
+			check = true;
+			break;
+		case "8":
+		case "Aug":
+		case "Aug.":
+		case "August":
+			day = 31;
+			check = true;
+			break;
+		case "9":
+		case "Sep":
+		case "Sept.":
+		case "September":
+			day = 30;
+			check = true;
+			break;
+		case "10":
+		case "Oct":
+		case "Oct.":
+		case "October":
+			day = 31;
+			check = true;
+			break;
+		case "11":
+		case "Nov":
+		case "Nov.":
+		case "November":
+			day = 30;
+			check = true;
+			break;
+		case "12":
+		case "Dec":
+		case "Dec.":
+		case "December":
+			day = 31;
+			check = true;
+			break;
+		
+			
+		}
+		if (check != true) {
+			System.out.println("You've enterer an invalid input");
+		}
+		} while(check != true);
+		System.out.println("The number of day in given month is: " + day);
+
+
+}}
+
+
+code for 6.5:
+package project_lab01_ex65;
+import java.util.Scanner;
+import java.util.Arrays;
+
+
+public class Main {
+	public static double sumOfArray(double[] arr) {
+		double sum = 0;
+		for (int i = 0; i < arr.length; i ++) {
+			sum += arr[i];
+		}
+		return sum;
+	
+	}
+	
+	public static void sortArray(double[] arr) {
+		double tmp;
+		int n = arr.length;
+		for (int i  = 0; i < n; i ++) {
+			for (int j = 0; j < n - i -1; j ++) {
+				if (arr[j] > arr[j+1]) {
+					tmp = arr[j];
+					arr[j] = arr[j+1];
+					arr[j+1] = tmp;
+				}
+			}
+		}
+	}
+	
+	public static double average(double[] arr) {
+		return sumOfArray(arr)/ arr.length;
+	}
+	public static void main(String[] args) {
+		Scanner sc = new Scanner(System.in);
+		System.out.println("Please enter the size of the array");
+		int n = sc.nextInt();
+		System.out.println("Please enter each element of the array");
+		double[] arr =  new double[n];
+
+		for (int i = 0; i < n; i ++) {
+			arr[i] = sc.nextDouble();
+		}
+		System.out.print("You've enter this array: ");
+		System.out.println(Arrays.toString(arr));
+		System.out.print("This is the array after being sorted:");
+		sortArray(arr);
+		System.out.println(Arrays.toString(arr));
+		System.out.print("This is the sum of the array: ");
+		System.out.println(sumOfArray(arr));
+		System.out.print("This is the avg of the array: ");
+		System.out.println(average(arr));
+	}
+
+}
+
+
+code for 6.6:
+package project_lab01_ex66;
+import java.util.Scanner;
+public class Main {
+
+	public static void main(String[] args) {
+		Scanner sc= new Scanner(System.in);
+		System.out.println("Please enter the size of 2 matrix:");
+		System.out.print("Number of rows: ");
+		int row = sc.nextInt();
+		System.out.print("Number of cols");
+		int col = sc.nextInt();
+		System.out.println("Please enter elements of the 1st matrix");
+		
+		double[][] mat_1 = new double[row][col];
+		for (int i = 0; i < row; i ++) {
+			for (int j =0; j < col; j ++) {
+				System.out.print(String.format("mat_1[%d][%d] = ",i,j));
+				mat_1[i][j] = sc.nextDouble();
+			}
+		}
+		System.out.println("Please enter elements of the 2nd matrix");
+		
+		double[][] mat_2 = new double[row][col];
+		for (int i = 0; i < row; i ++) {
+			for (int j =0; j < col; j ++) {
+				System.out.print(String.format("mat_2[%d][%d] = ",i,j));
+				mat_2[i][j] = sc.nextDouble();
+			}
+		}
+		double [][] res_mat = new double[row][col];
+		for (int i = 0; i < row; i ++) {
+			for (int j =0; j < col; j ++) {
+				res_mat[i][j] = mat_1[i][j] + mat_2[i][j];
+			}
+		}
+		System.out.println("Result matrix of addition:");
+		for (int i = 0; i < row; i ++) {
+			for (int j =0; j < col; j ++) {
+				System.out.print(res_mat[i][j] + " ");
+			}
+			System.out.println();
+		}
+}
+
+}
+
+
+

@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
+	<classpathentry excluding="ProjectLab01Ex64/src/|project_lab01_ex65/src/|project_lab01_ex63/src/|project_lab01_ex66/src/" kind="src" path=""/>
+	<classpathentry kind="src" path="project_lab01_ex63/src"/>
+	<classpathentry kind="src" path="project_lab01_ex65/src"/>
+	<classpathentry kind="src" path="project_lab01_ex66/src"/>
+	<classpathentry kind="src" path="ProjectLab01Ex64/src"/>
+	<classpathentry kind="output" path="ProjectLab01Ex64/bin"/>
+</classpath>
