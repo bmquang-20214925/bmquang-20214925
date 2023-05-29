@@ -1,0 +1,20 @@
+Q9:
+Q:Which classes are aggregates of other classes ?
+
+A:Cart and Store can be considered the aggregates of multiple classes, including Media, DigitalVideoDisc, Book, CompactDisc.
+CompactDisc is the aggregate of Track.
+
+Q10:
+Q:When overriding the equals() method of the Object class, you will have to cast the Object parameter obj to the type of Object that you are dealing with.
+ For example, in the Media class, you must cast the Object obj to a Media, and then check the equality of the two objects’ 
+attributes as the above requirements (i.e. title for Media; title and length for Track). If the passing object is not an instance of Media, what happens? 
+
+A:The equals() method will return false as if an object is not an instance of Media, it will not pass through if-else loop to get to return true, 
+the method equals() returns false if object cannot get pass if-condition.
+
+Q:11:
+Q:Iterate through the list and print out the information of the media by using toString() method. Observe what happens and explain in detail.
+
+A: toString() method is overriden by 3 classese: cd, book, dvd. 
+Whenever invoked by a subclass of Media, it will perform corresponding toString() but not toString() of the Media class (if it has one).
+
