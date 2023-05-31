@@ -18,3 +18,30 @@ Q:Iterate through the list and print out the information of the media by using t
 A: toString() method is overriden by 3 classese: cd, book, dvd. 
 Whenever invoked by a subclass of Media, it will perform corresponding toString() but not toString() of the Media class (if it has one).
 
+Q12:
+Q:What class should implement the Comparable interface? 
+
+A: In our project, the Media class with COMPARE_BY_TITLE_COST and COMPARE_BY_COST_TITLE should be the one implementing Comparator interface.
+
+
+Q:In those classes, how should you implement the compareTo()method be to reflect the ordering that we want? 
+
+A: In my code, I overrode the compare() method from Comparator interface (not compareTo() method from Comparable interface).
+So we want the the alphabetical order and the higher cost comes first, to do this, we need the one comes before in alphabetical order and 
+higher in the price return negative value (such as -1, or -2, ...) when compared to the one that comes later or lower in the price.
+
+
+Q:Can we have two ordering rules of the item (by title then cost and by cost then title) if we use this Comparable interface approach? 
+
+A: Again, I'm using Comparator interface and assume that the question is about this interface (I believe Comparabale interface with compareTo() method can be overriden in the same way).
+This is possible, e.g. MediaComparatorByCostTitle(). In this method, I'll compare them by cost first, if costs are equal, then it doesn't
+return anything but process to the compare the title.
+
+
+Q:Suppose the DVDs has a different ordering rule from the other media types, that is by title, then decreasing length, then cost. How would you modify your code to allow this? 
+
+A: There are several ways to set a different ordering rule for DVD.
+One way is to implement Comparator interface and override the compare() method in a different way in DVD.
+Or you can remove the "final static" in COMPARE_BY_TITLE_COST variable in Media class (technically they are defined as a variable of 
+Comparator<Media> type) and overriden this COMPARE_BY_TITLE_COST or whatever name it has in the DVD class.
+In this way, it can be considered as a polymorphism.
