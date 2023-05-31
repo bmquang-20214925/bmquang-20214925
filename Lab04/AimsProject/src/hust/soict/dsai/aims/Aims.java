@@ -20,7 +20,10 @@ public class Aims {
         Scanner scanner = new Scanner(System.in);
         int choice = scanner.nextInt();
         scanner.nextLine(); // Consume the newline character
-                
+// If user chooses option 0, they will not enter switch case but process to the next code
+// If user chooses option not 0 and not valid, they will enter default case of switch case
+// If user choose an option not 0 and valid, they will get to the code of corresponding method.
+// All while and switch case methods in this Aims project are designed this structure.
         while (choice != 0) {
             switch (choice) {
                 case 1:
