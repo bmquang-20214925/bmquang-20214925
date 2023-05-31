@@ -42,6 +42,9 @@ Q:Suppose the DVDs has a different ordering rule from the other media types, tha
 
 A: There are several ways to set a different ordering rule for DVD.
 One way is to implement Comparator interface and override the compare() method in a different way in DVD.
-Or you can remove the "final static" in COMPARE_BY_TITLE_COST variable in Media class (technically they are defined as a variable of 
+You can contain this new overriden compare() method in sth like DVDCompareByTitleLengthCost and then create:
+public static final Comparator<DigitalVideoDisc> DVD_COMPARE_BY_TITLE_LENGTH_COST = new DVDCompareByTitleLengthCost();
+
+Alternatively, you can remove the "final static" in COMPARE_BY_TITLE_COST variable in Media class (technically they are defined as a variable of 
 Comparator<Media> type) and overriden this COMPARE_BY_TITLE_COST or whatever name it has in the DVD class.
 In this way, it can be considered as a polymorphism.
